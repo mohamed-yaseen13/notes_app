@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/views/widgets/custom_floating_action_button.dart';
 import 'package:notes_app/views/widgets/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
@@ -7,20 +8,8 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: const Color.fromARGB(
-          255,
-          91,
-          247,
-          231,
-        ),
-        shape: const CircleBorder(),
-        child: const Icon(
-          Icons.add,
-          color: Colors.black,
-        ),
-      ),
+      floatingActionButton:
+          CustomFloatingActionButton(),
       body: const NotesViewBody(),
     );
   }
