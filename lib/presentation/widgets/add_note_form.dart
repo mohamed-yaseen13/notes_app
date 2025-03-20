@@ -1,37 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/views/widgets/custom_add_button.dart';
-import 'package:notes_app/views/widgets/custom_text_field.dart';
-
-class AddNoteBottomSheet extends StatelessWidget {
-  const AddNoteBottomSheet({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 2,
-      ),
-      child: SingleChildScrollView(
-        child: AddNoteForm(),
-      ),
-    );
-  }
-}
+import 'package:notes_app/presentation/widgets/custom_add_button.dart';
+import 'package:notes_app/presentation/widgets/custom_text_field.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({super.key});
 
   @override
-  State<AddNoteForm> createState() =>
-      _AddNoteFormState();
+  State<AddNoteForm> createState() => _AddNoteFormState();
 }
 
 class _AddNoteFormState extends State<AddNoteForm> {
   final GlobalKey<FormState> formKey = GlobalKey();
 
-  AutovalidateMode autovalidateMode =
-      AutovalidateMode.onUserInteraction;
+  AutovalidateMode autovalidateMode = AutovalidateMode.onUserInteraction;
 
   String? title, subtitle;
 
@@ -63,8 +44,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
               } else {
-                autovalidateMode =
-                    AutovalidateMode.always;
+                autovalidateMode = AutovalidateMode.always;
                 setState(() {});
               }
             },
